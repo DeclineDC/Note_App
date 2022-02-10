@@ -1,4 +1,4 @@
-package com.decline.noteapp
+package com.decline.noteapp.app_features.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
