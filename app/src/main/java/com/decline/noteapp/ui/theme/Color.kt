@@ -16,6 +16,8 @@ val onSecondaryLight = Color(0xffff454746)
 val onSurfaceLight = Color(0xffff606060)
 val onBackgroundLight = Color(0xffff1f1f1f)
 
+val StatusBarColor = Color(0xCCffffff)
+
 val RedOrange = Color(0xffffab91)
 val RedPink = Color(0xfff48fb1)
 val BabyBlue = Color(0xff81deea)
