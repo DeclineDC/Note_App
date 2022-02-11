@@ -17,7 +17,9 @@ import com.decline.noteapp.app_features.presentation.add_edit_note.AddEditNoteSc
 import com.decline.noteapp.app_features.presentation.notes.NotesScreen
 import com.decline.noteapp.app_features.presentation.util.Screen
 import com.decline.noteapp.ui.theme.NoteAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
