@@ -1,12 +1,8 @@
 package com.decline.noteapp.app_features.presentation.notes
 
-import android.graphics.drawable.shapes.Shape
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CornerSize
@@ -17,8 +13,6 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.decline.noteapp.app_features.presentation.notes.components.NoteItem
@@ -61,7 +55,13 @@ fun NotesScreen(
         },
         scaffoldState = scaffoldState
     ) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(
+                bottom = spacing.spaceExtraLarge,
+                top = spacing.spaceExtraLarge
+            )
+        ) {
             items(state.notes) { note ->
                 NoteItem(
                     note = note,
