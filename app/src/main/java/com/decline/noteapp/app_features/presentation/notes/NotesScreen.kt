@@ -44,23 +44,6 @@ fun NotesScreen(
         },
         scaffoldState = scaffoldState
     ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(spacing.spaceMedium)
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "Your note",
-                    style = MaterialTheme.typography.h4
-                )
-            }
-        }
-        Spacer(modifier = Modifier.height(spacing.spaceMedium))
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.notes) { note ->
                 NoteItem(

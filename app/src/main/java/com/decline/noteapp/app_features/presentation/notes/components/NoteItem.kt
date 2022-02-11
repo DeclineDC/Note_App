@@ -36,6 +36,7 @@ fun NoteItem(
 
     Box(
         modifier = modifier
+            .padding(horizontal = spacing.spaceMedium)
     ) {
         Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {
