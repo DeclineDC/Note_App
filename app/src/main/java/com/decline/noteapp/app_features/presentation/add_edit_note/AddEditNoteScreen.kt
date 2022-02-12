@@ -7,6 +7,8 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Save
@@ -19,9 +21,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.decline.noteapp.R
 import com.decline.noteapp.app_features.data.util.Constants.noteColors
 import com.decline.noteapp.app_features.presentation.add_edit_note.components.TransparentHintTextField
 import com.decline.noteapp.app_features.presentation.util.UiEvent
@@ -64,12 +68,25 @@ fun AddEditNoteScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
+                shape = RoundedCornerShape(spacing.spaceMedium),
                 onClick = {
                     viewModel.onEvent(AddEditNoteEvent.SaveNote)
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
-                Icon(imageVector = Icons.Default.Save, contentDescription = "Save note")
+                Icon(
+                    imageVector = Icons.Default.Save,
+                    contentDescription = stringResource(id = R.string.save_note)
+                )
+            }
+        },
+        isFloatingActionButtonDocked = true,
+        bottomBar = {
+            BottomAppBar(
+                cutoutShape = MaterialTheme.shapes.small.copy(
+                    CornerSize(percent = 35)
+                )
+            ) {
             }
         },
         scaffoldState = scaffoldState
@@ -83,7 +100,7 @@ fun AddEditNoteScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(spacing.spaceSmall),
+                    .padding(top = spacing.spaceExtraLarge),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 noteColors.forEach { color ->
