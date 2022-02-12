@@ -16,7 +16,17 @@ val onSecondaryLight = Color(0xffff454746)
 val onSurfaceLight = Color(0xffff606060)
 val onBackgroundLight = Color(0xffff1f1f1f)
 
-val StatusBarColor = Color(0xCCffffff)
+val BackgroundDark = Color(0xffff1f1f1f)
+val SurfaceDark = Color(0xffff1f1f1f)
+val PrimaryDark = Color(0xffff2d2f33)
+val onPrimaryDark = Color(0xffffc3c7c5)
+val SecondaryDark = Color(0xffff2d2f33)
+val onSecondaryDark = Color(0xffffc3c7c5)
+val onSurfaceDark = Color(0xffffe3e3e3)
+val onBackgroundDark = Color(0xffffe3e3e3)
+
+val StatusBarColorLight = Color(0xCCffffff)
+val StatusBarColorDark = Color(0xCC000000)
 
 val RedOrange = Color(0xffffab91)
 val RedPink = Color(0xfff48fb1)

@@ -9,9 +9,14 @@ import androidx.compose.runtime.CompositionLocalProvider
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = PrimaryDark,
+    onPrimary = onPrimaryDark,
+    secondary = SecondaryDark,
+    onSecondary = onSecondaryDark,
+    surface = SurfaceDark,
+    onSurface = onSurfaceLight,
+    background = BackgroundDark,
+    onBackground = onBackgroundDark
 )
 
 private val LightColorPalette = lightColors(
@@ -40,9 +45,18 @@ fun NoteAppTheme(
     content: @Composable () -> Unit
 ) {
     val systemUiController = rememberSystemUiController()
-    systemUiController.setStatusBarColor(
-        color = StatusBarColor
-    )
+
+    if(darkTheme) {
+        systemUiController.setStatusBarColor(
+            color = StatusBarColorDark)
+
+    } else {
+        systemUiController.setStatusBarColor(
+            color = StatusBarColorLight)
+    }
+
+
+
 
     val colors = if (darkTheme) {
         DarkColorPalette
